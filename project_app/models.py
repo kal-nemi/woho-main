@@ -1,6 +1,6 @@
 from django.db import models
 # from django.contrib.auth import AUTH_USER_MODEL
-from PIL import Image
+#from PIL import Image
 # Create your models here.
 
 

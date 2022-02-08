@@ -534,4 +534,9 @@ def projects(request):
 @login_required
 def clusters(request):
     return render(request, 'pages/clusters.html')
+
+def woho_base(request):
+    return render(request, 'pages/woho_base.html')
+def woho_home(request):
+    return render(request, 'pages/woho_home.html')
     

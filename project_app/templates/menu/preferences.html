@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load tailwind_filters %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+
+<!--end::Page Title-->
+
+
+<div class="p-4 m-4">
+  <h5 class="font-semibold text-lg pb-4">
+  Preferences </h5>
+  <div class="card-body">
+
+    <form class="w-4/5" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="content">
+
+        {{ u_form|crispy }}
+        <!-- {{ p_form|crispy }} -->
+
+        <button type="submit" class="bg-black hover:bg-gray-700 rounded-xl text-white p-2 pl-4 pr-4 mt-2">
+          <p class="font-semibold text-base">Update</p>
+        </button>
+        <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+
+    </form>
+
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock body %}

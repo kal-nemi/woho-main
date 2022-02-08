@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load custom_tags %}
+<div class="flex justify-center flex-1 h-auto bg-white p-4">
+    <main class=" flex-1 grid relative overflow-y-auto focus:outline-none">
+        <div class="py-6">
+            <div class="px-4 sm:px-6 md:px-0">
+                <h1 class="text-3xl font-bold text-center"> 👋 {{user.first_name}}, Lets help you find an expert.</h1>
+                <h4 class="text-xl font-semibold text-gray-900 py-5 text-center">Enter a topic you want to collaborate
+                    on.</h4>
+            </div>
+            <form method="GET" action="" autocomplete="off">
+                <div class="bg-white border-2  shadow p-2 relative rounded-xl flex">
+                    <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </span>
+                    <input name="topicquery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                           type="text"
+                           placeholder="Try a topic that you want to find a collaborator 'e.g. Computer Science, 3D printing '"/>
+                    <button type="submit"
+                            class="bg-blue-900 hover:bg-blue-800 rounded-xl text-white p-2 pl-4 pr-4 ml-2">
+                        <p class="font-semibold text-xs">Search</p>
+                    </button>
+                </div>
+            </form>
+
+            <br>
+
+            <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+                {% for topic in topics %}
+                <!--Card 1-->
+                <div class="rounded overflow-hidden shadow-lg">
+
+                    <div class="px-6 py-4">
+                        <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain">
+                        <div class="font-bold text-xl mb-2">{{topic.title}} {{topic.FirstName}} {{topic.LastName}}</div>
+                        <p><b>Match:</b> {{topic.Relevance}}</p>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        {% for list in topic.AreaOfExpertise %}
+                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{{list}}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="p-3">
+                        {% with id=topic.id|stringformat:"i" %}
+                        <div id="more_button">
+                            <button id="{{ id }}"
+                                    class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-white focus:outline-none">
+                                Knowledge Graph
+                            </button>
+                            {% endwith %}
+                        </div>
+
+                    </div>
+
+                    <!-- overlay -->
+                    {% with id=topic.id|stringformat:"i" %}
+                    {% with text="modal_overlay_"|add:id %}
+                    <div id="{{ text }}"
+                         class="hidden absolute inset-0 bg-black bg-opacity-30 h-screen w-full flex justify-center items-start md:items-center pt-10 md:pt-0">
+                        {% endwith %}
+                        {% endwith %}
+
+                        <!-- modal -->
+                        {% with id=topic.id|stringformat:"i" %}
+                        {% with text2="modal_"|add:id %}
+                        <div id="{{ text2 }}"
+                             class="pacity-0 transform -translate-y-full scale-150  relative w-10/12 md:w-1/2 h-1/2 md:h-3/4 bg-white rounded shadow-lg transition-opacity transition-transform duration-300">
+                            {% endwith %}
+                            {% endwith %}
+                            <!-- button close -->
+
+                            <div id="close_button">
+                                <button
+                                    class=" absolute -top-3 -right-3 bg-red-500 hover:bg-red-600 text-2xl w-10 h-10 rounded-full focus:outline-none text-white">
+                                &cross;
+                                </button>
+                            </div>
+
+
+
+                            <!-- header -->
+                            <div class="px-4 py-3 border-b border-gray-200">
+                                <h2 class="text-xl font-semibold text-gray-600">{{topic.title}} {{topic.FirstName}}
+                                    {{topic.LastName}}</h2>
+                            </div>
+
+                            <!-- body -->
+                            <div id="body" class="w-full p-3">
+                                <iframe src="/graphs/{{topic.id}}/" width="500" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="absolute bottom-0 left-0 px-4 py-3 border-t border-gray-200 w-full flex justify-end items-center gap-3">
+                            <div id="close_button_bellow">
+                                <button
+                                        class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white focus:outline-none"
+                                >Close
+                                </button>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+                            <script >
+
+                               var theParent = document.querySelectorAll("#more_button");
+                                for (var i = 0; i < theParent.length; i++) {
+                                    theParent[i].addEventListener("click", function (event) {
+                                        var clickedItem = event.target.id;
+                                        var modal_overlay = document.querySelector("#modal_overlay_" + clickedItem);
+                                        var modal = document.querySelector("#modal_" + clickedItem);
+
+                                        const modalCl = modal.classList;
+                                        const overlayCl = modal_overlay;
+
+                                        overlayCl.classList.remove('hidden')
+                                        setTimeout(() => {
+                                            modalCl.remove('opacity-0')
+                                            modalCl.remove('-translate-y-full')
+                                            modalCl.remove('scale-150')
+                                        }, 100);
+
+
+
+                                        var theCloseParent = document.querySelectorAll("#close_button");
+                                        theCloseParent[clickedItem].addEventListener("click", function (event) {
+                                            var target = document.querySelector(event.target.tagName);
+                                            if (target) {
+                                                modalCl.add('-translate-y-full')
+                                                 setTimeout(() => {
+                                                    modalCl.add('opacity-0')
+                                                    modalCl.add('scale-150')
+                                                 }, 100);
+                                                setTimeout(() => overlayCl.classList.add('hidden'), 300);
+                                            }
+                                        });
+
+
+                                        var theCloseParent = document.querySelectorAll("#close_button_bellow");
+                                        theCloseParent[clickedItem].addEventListener("click", function (event) {
+                                            var target = document.querySelector(event.target.tagName);
+                                            if (target) {
+                                                modalCl.add('-translate-y-full')
+                                                 setTimeout(() => {
+                                                    modalCl.add('opacity-0')
+                                                    modalCl.add('scale-150')
+                                                 }, 100);
+                                                setTimeout(() => overlayCl.classList.add('hidden'), 300);
+                                            }
+                                        });
+
+
+                                    }, false);
+                                }
+
+
+
+
+                    </script>
+
+
+        {% endblock body %}

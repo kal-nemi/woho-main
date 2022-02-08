@@ -1,0 +1,287 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="flex justify-center flex-1 h-auto bg-white p-4">
+    <main class=" flex-1 grid relative overflow-y-auto focus:outline-none">
+        <div class="py-2">
+            <div class="px-4 sm:px-6 md:px-0">
+                <!-- heading -->
+                <div class="m-2 font-semibold text-3xl mb-2  ">
+                    Directory
+                    <div class="bg-gray-100 h-2 w-10/12 mt-2 "></div>
+                </div>
+                <!-- search bar -->
+                <form method="GET" action="" autocomplete="off">
+                    <div class="intro-1 bg-white border-2 border-gray-200 p-1 relative w-10/12 rounded-xl flex">
+                        <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </span>
+                        {% if keyword %}
+                    <input name="topicquery" id="title"
+                        class="border-white outline-none focus:ring-0 border-0 w-full rounded-md p-1" type="text"
+                        placeholder="Try searching Industry for getting the company related to it 'e.g. Chemical , Construction'" value={{keyword}} />
+                        {% else %}
+                        <input name="topicquery" id="title"
+                            class="border-white outline-none focus:ring-0 border-0 w-full rounded-md p-1" type="text"
+                            placeholder="Try searching Industry for getting the company related to it 'e.g. Chemical , Construction'" />
+                        {% endif%}
+                        <button type="submit" class="bg-black hover:bg-gray-700 rounded-md text-white p-1 pl-4 pr-4 ml-2">
+                            <p class="font-semibold text-xs px-6"> Search </p>
+                        </button>
+                    </div>
+                </form>
+                
+                {% if suppliers%}
+                <select name="process" class="w-48 border-2 border-gray-500 bg-gray-300 rounded-lg m-4 p-2" onchange="location=finalurl()" id="process">
+                    <option id="v1" value=""  disabled selected hidden>Processes</option>
+                    {% for item in processes %}
+                        <option value="{{item}}">{{item}}</option>
+                    {% endfor %}
+                </select>
+                {% endif %}
+                <!-- <p>{{processes}}</p> -->
+            
+                <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+                <script>
+                
+                    //for getting url after applying ordering
+                    function finalurl() {
+                        var url = new URL(window.location.href);
+                        console.log(url)
+                        var search_params = url.searchParams;
+                        search_params.set('process', document.getElementById("process").value);
+                        url.search = search_params.toString();
+                        var new_url = url.toString();
+                        return new_url
+                    }
+                    
+                    
+                </script>
+
+                
+                <!-- results -->
+                <div>
+                    <div class="w-11/12 ">
+                        <!-- map -->
+                        {% if map %}
+                        {{map|safe}}
+                        {% endif %}
+
+                        <h1 class="m-2 mt-4">
+                            Matching results : {{count}} total results
+                        </h1>
+                        <div class="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                            
+                            {% for list in suppliers %}
+                            <!--Card 1-->
+                            <div class="rounded overflow-hidden shadow-lg">
+                                <div class="px-6 py-4 ">
+                                    <!-- <img class="w-8" src="project_app\static\assets\media\suppliers\default.jpg" alt="Mountain"> -->
+                                    <div  onclick="openModal('{{list.id}}')" class=" font-semibold mb-2 break-words">{{list.companyName}}</div>
+                                    <div class=" font-semibold mb-2 truncate"> <a href='{{list.url}}' class="font-semibold mb-2 text-blue-700 "><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                                      </svg>{{list.url}}</a>
+                                    </div>
+                                    
+                                    <div onclick="openModal('{{list.id}}')" class="float-right  pb-2 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 align-middle " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    
+                                </div>
+                                <!-- modal -->
+
+                                <dialog id="{{list.id}}" class="bg-transparent z-0 relative w-screen h-screen">
+                                    <div
+                                        class="p-7 flex justify-center items-center fixed left-0 top-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 opacity-0">
+                                        <div class="bg-white flex rounded-lg w-1/2 relative">
+                                            <div class="flex flex-col items-start">
+                                                <div class="p-7 flex items-center w-full">
+                                                    <div class="text-gray-900 font-bold text-lg">{{list.companyName}}</div>
+                                                    
+                                                    <svg onclick="modalClose('{{list.id}}')"
+                                                        class="ml-auto fill-current text-gray-700 w-5 h-5 cursor-pointer"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                                        <path
+                                                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
+                                                    </svg>
+                                                </div>
+
+                                                <div class="px-7 text-sm overflow-x-hidden overflow-y-auto text-justify space-x-3"
+                                                    style="max-height: 40vh;">
+
+                                                    <p class="text-xl font-semibold ">Details OF Company :</p>
+                                                    {% if list.companyName %}
+                                                        <p><b>Company Name : </b>{{list.companyName}}</p>
+                                                    {% endif %}
+                                                    {% if list.address %}
+                                                        <p><b> Address : </b>{{list.address}}</p>
+                                                    {% endif %}
+                                                    {% if list.postcode %}
+                                                        <p><b>PostCode : </b> {{list.postcode}}</p>
+                                                    {% endif %}
+                                                    {% if list.country %}
+                                                        <p><b>Country : </b>{{list.country}}</p>
+                                                    {% endif %}
+                                                    {% if list.phonenumber %}
+                                                    <p><b>Phone Number : </b>{{list.phonenumber}}</p>
+                                                    {% endif %}
+                                                    {% if list.faxnumber %}
+                                                    <p><b>Fax Number : </b>{{list.faxnumber}}</p>
+                                                    {% endif %}
+                                                    {% if list.url %}
+                                                    <p><b>Url : </b>{{list.url}}</p>
+                                                    {% endif %}
+                                                    {% if list.contactname %}
+                                                    <p><b>Contact Name : </b>{{list.contactname}}</p>
+                                                    {% endif %}
+                                                    {% if list.emailaddress %}
+                                                    <p><b>Email address : </b>{{list.emailaddress}}</p>
+                                                    {% endif %}
+                                                    {% if list.markets %}
+                                                    <p><b>Markets : </b>{{list.markets}}</p>
+                                                    {% endif %}
+                                                    {% if list.locations %}
+                                                    <p><b>Locations : </b>{{list.locations}}</p>
+                                                    {% endif %}
+                                                    {% if list.standards %}
+                                                    <p><b>Standards : </b>{{list.standards}}</p>
+                                                    {% endif %}
+                                                    {% if list.noOfEmployees %}
+                                                    <p><b>Number of employee : </b>{{list.noOfEmployees}}</p>
+                                                    {% endif %}
+                                                    {% if list.annualTurnover %}
+                                                    <p><b>Annual Turnover : </b>{{list.annualTurnover}}</p>
+                                                    {% endif %}
+                                                    {% if list.rateOfGrowth %}
+                                                    <p><b>Rate of growth : </b>{{list.rateOfGrowth}}</p>
+                                                    {% endif %}
+                                                    {% if list.WMCCMrated %}
+                                                    <p><b>WMCC Rated : </b>{{list.WMCCMrated}}</p>
+                                                    {% endif %}
+                                                    {% if list.lastUpdated %}
+                                                    <p><b>Last updated : </b>{{list.lastUpdated}}</p>
+                                                    {% endif %}
+                                                    {% if list.cpId %}
+                                                    <p><b>CP Id : </b>{{list.cpId}}</p>
+                                                    {% endif %}
+                                                    {% if list.csvId %}
+                                                    <p><b>CSV Id : </b>{{list.csvId}}</p>
+                                                    {% endif %}
+                                                    {% if list.feedback %}
+                                                    <p><b>Feedback : </b>{{list.feedback}}</p>
+                                                    {% endif %}
+                                                    {% if list.Catelog %}
+                                                    <p><b>Catelog : </b>{{list.Catelog}}</p>
+                                                    {% endif %}
+                                                    {% if list.category %}
+                                                    <p><b>Category : </b>{{list.category}}</p>
+                                                    {% endif %}
+                                                    {% if list.ethos %}
+                                                    <p><b>Ethos : </b>{{list.ethos}}</p>
+                                                    {% endif %}
+                                                    {% if list.basicLineOfBusiness %}
+                                                    <p><b>Basic Line Of Buisness : </b>{{list.basicLineOfBusiness}}</p>
+                                                    {% endif %}
+                                                    {% if list.productsAndServices %}
+                                                    <p><b>Product and services : </b>{{list.productsAndServices}}</p>
+                                                    {% endif %}
+                                                    {% if list.profile %}
+                                                    <p><b>Profile : </b>{{list.profile|safe}}</p>
+                                                    {% endif %}
+                                                    {% if list.companyId %}
+                                                    <p><b>Company Id : </b>{{list.companyId}}</p>
+                                                    {% endif %}
+                                                </div>
+
+                                                <div class="p-7 flex justify-end items-center w-full">
+                                                    <button type="button" onclick="modalClose('{{list.id}}')"
+                                                        class="bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                                        Close
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </dialog>
+
+                                <script>
+
+                                    function openModal(key) {
+                                        document.getElementById(key).showModal();
+                                        document.body.setAttribute('style', 'overflow: hidden;');
+                                        document.getElementById(key).children[0].scrollTop = 0;
+                                        document.getElementById(key).children[0].classList.remove('opacity-0');
+                                        document.getElementById(key).children[0].classList.add('opacity-100')
+                                    }
+
+                                    function modalClose(key) {
+                                        document.getElementById(key).children[0].classList.remove('opacity-100');
+                                        document.getElementById(key).children[0].classList.add('opacity-0');
+                                        setTimeout(function () {
+                                            document.getElementById(key).close();
+                                            document.body.removeAttribute('style');
+                                        }, 100);
+                                    }
+                                </script>
+
+                            </div>
+                            {% endfor %}
+                            <!-- modal end -->
+                            <!-- card 1 end -->
+
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    <!-- pagination -->
+                    <div >
+                        {% if suppliers.has_other_pages %}
+                            <ul class="pagination flex space-x-4">
+                                {% if suppliers.has_previous %}
+                                <li><a href="?topicquery={{keyword}}&process={{suppliers.process}}&page={{ suppliers.previous_page_number }}">&laquo;</a></li>
+                                {% else %}
+                                <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                <!-- {% for i in suppliers.paginator.page_range %}
+                                {% if suppliers.number == i %}
+                                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                {% else %}
+                                <li><a href="?topicquery={{keyword}}&page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                                {% endfor %} -->
+                                <span class="current">
+                                    Page {{ suppliers.number }} of {{ suppliers.paginator.num_pages }}
+                                </span>
+                                {% if suppliers.has_next %}
+                                <li><a href="?topicquery={{keyword}}&process={{process}}&page={{ suppliers.next_page_number }}">&raquo;</a></li>
+                                {% else %}
+                                <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+
+
+
+
+
+
+{% endblock body %}

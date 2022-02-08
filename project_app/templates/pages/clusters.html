@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="flex justify-center flex-1 h-auto bg-white p-4">
+    <main class=" flex-1 grid relative overflow-y-auto focus:outline-none">
+        <div class="py-6">
+            <div class = "w-4/5">
+                <div class="p-2">
+                    <!-- heading -->
+                    <div class="m-2 font-semibold text-3xl mb-2  ">
+                        Industry Clusters
+                        <div class="bg-gray-100 h-2 w-10/12 mt-2 "></div>
+                    </div>
+                </div>
+                <div class="p-2 text-base text-black text-justify ">
+                    <p>
+                        An industry cluster offers any company the opportunity to enter into an 
+                        environment where everyone else has similar interests and needs; this in
+                        turn creates the possibility for collaboration as well as educated problem 
+                        solving. It is thought that the next stage will offer substantial savings to
+                        such clusters, since they will be able to trade online (i.e. cutting costs, 
+                        bulk buying, auctioning products and services). See the DTI's "A Practical 
+                        Guide to Cluster Development"
+                    </p>
+                </div>
+                <div class="p-2">
+                    <h1 class="text-xl font-bold  w-2/3">Clusters</h1>
+                </div> 
+                <div class="p-2 text-base text-black text-justify">
+                    <p>
+                        This is a list of the public Clusters currently on the West Midlands Collaborative
+                        Commerce site. To use a Project or Cluster Space then contact us at profileme@wmccm.co.uk.
+                    </p>
+                </div>
+                <!-- Cards -->
+                <div class="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-7">
+
+                
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">Automotive High-Voltage Specialist Centre</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+                    
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">Catalogues of Capabilities, Samples & Products</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">CCM Academic Research</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">CNC Milling | West Midlands | UK</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">CNC Turning | West Midlands | UK</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">Constructing Excellence in the Built Environment</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">Coventry and Warwickshire Aerospace Forum</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+                    <!--Card 1-->
+                    <div onclick="openModal('mymodalcentered')" class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\users\default.jpg" alt="Mountain"> -->
+                            <div class="font-semibold text-xl mb-2">EDM, Spark Erosion & Wire Erosion Cluster</div>
+                        </div>
+                    </div>
+                    <!-- card 1 end -->
+
+                    
+                </div>
+                <div class="p-2">
+                    <h1 class="text-lg font-bold  w-2/3">Sample list of industry on UK-CCM</h1>
+                </div> 
+                <div class="p-2">
+                    <h1 class="text-lg text-gray-500 font-bold  w-2/3">Auctions Project</h1>
+                </div> 
+                <div class="p-2 text-base text-black text-justify">
+                    <p>
+                        This cluster is being used for an MSc Project on On-Line Auctions. This
+                         cluster has the full Auctions functionality of the West Midlands Collaborative 
+                         Marketplace. To be able to trial this function, or to be able to set up a Prototype 
+                         eBay Shop, then email rob@wmccm.co.uk
+                    </p>
+                </div>
+                <div class="p-2">
+                    <h1 class="text-lg text-gray-500 font-bold  w-2/3">Automotive High Voltage Specialist Centre</h1>
+                </div> 
+                <div class="p-2 text-base text-black text-justify ">
+                    <p>
+                        This on-line facility is designed to support the activities of the Automotive High
+                         Voltage Specialist Centre. It allows authorised partcipants to communicate and collaborate
+                          in a secure manner. Each designated Special Interest Group has a members-only password controlled
+                           project space. Within this project space a library of documents and presentations relevant to the work
+                            of the group is available for downloading. A discussion forum is also provided to allow members to 
+                            share their ideas with each other and report progress on project tasks
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+{% endblock body %}

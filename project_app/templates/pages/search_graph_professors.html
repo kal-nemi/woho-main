@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="grid grid-cols-2 ">
+    <div class="p-6">
+        <form method="GET" action="">
+            <div class="bg-white border-2  shadow p-2 relative rounded-xl flex">
+                    <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </span>
+                <input name="mapquery" id="title" class="border-white outline-none border-0 w-full rounded-xl p-2"
+                       type="text"
+                       placeholder="Try a high level topic you want to learn about 'e.g. agile, datascience'"/>
+                <button type="submit"  class="bg-blue-900 hover:bg-blue-800 rounded-xl text-white p-2 pl-4 pr-4 ml-2">
+                    <p class="font-semibold text-xs">Search</p>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="p-3">
+        <div x-data="{show: false}" @click.away="show = false">
+            <button @click="show = ! show"
+                    class="mt-4 border-0 block bg-blue-900 bg-blue-600 text-gray-200 rounded-lg px-6 text-sm py-3 overflow-hidden focus:outline-none focus:border-white">
+                <div class="flex justify-between"><span>Specific Search Option</span>
+                    <svg class="fill-current text-gray-200" xmlns="http://www.w3.org/2000/svg" height="24"
+                         viewBox="0 0 24 24" width="24">
+                        <path d="M7 10l5 5 5-5z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+            </button>
+            <div x-show="show" class="mt-2 py-2 bg-white rounded-lg shadow-xl">
+                <a href="{% url 'search_professors' %}" name="professors_site" class="block px-4 py-2 text-gray-800 hover:bg-blue-800 hover:text-white">Professors</a>
+                <a href="{% url 'search_expertise' %}"  name="expertise_site" class="block px-4 py-2 text-gray-800 hover:bg-blue-800 hover:text-white">Area Of Expertise</a>
+            </div>
+        </div>
+    </div>
+    <div class="px-7 p-2">
+        <span>Current: Professors</span>
+    </div>
+
+</div>
+
+<div class="flex justify-center items-center h-screen max-w">
+    {% include 'pages/graphs/graph_professors.html'%}
+
+</div>
+
+{% endblock body %}

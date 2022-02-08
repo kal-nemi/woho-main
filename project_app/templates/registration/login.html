@@ -1,0 +1,52 @@
+{% load tailwind_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>UK CCM</title>
+    <link rel="shortcut icon" href="ukccm_logo.png"/>
+    <style>
+      #div_id_username,#div_id_password {
+        width: 100%;
+      }
+      .alert{
+        width:20rem;}
+
+    </style>
+</head>
+
+<body class="w-screen h-screen bg-gray-200  ">    
+    <p class="  items-center justify-center text-center flex mb-20 ">
+        <h2 class="text-black text-center font-bold mb-8 text-3xl ">  UK CCM
+        </h2>
+        <!-- <img class="w-1/5 h-1/5 p-2" src="project_app\swansea-university-logo.svg" alt="SU" > -->
+    </p>
+    <div class=" flex justify-center items-center ">
+      <div class="p-5 bg-white rounded-xl flex justify-center items-center flex-col shadow-xl">
+
+        <form method="post">
+          {% csrf_token %}
+
+          {{ form|crispy }}
+          <!-- <input type="email" name="email" class="mb-3 p-2 w-80 focus:border-gray-600 rounded-lg border-2 outline-none" autocomplete="off" placeholder="Email" required /> -->
+          <!-- <input type="password" name="password" class="mb-3 p-2 w-80 focus:border-gray-600 rounded-lg border-2 outline-none" autocomplete="off" placeholder="Password" required /> -->
+          <button class="bg-black text-white font-bold p-2 rounded-lg w-80" id="login" type="submit"><span>Sign in</span></button>
+          <a href="{% url 'password_reset' %}">
+            <p class="mt-4 text-base text-center text-gray-600">Forgot Password?</p>
+          </a>
+          <div class="grid grid-cols-3 w-full mt-1 mb-3 items-center text-center">
+            <hr class="border-gray-300 border-1 mt-2 rounded-md" />
+            <label class="text-base text-gray-600"> or </label>
+            <hr class="border-gray-300 border-1 mt-2 rounded-md" />
+          </div>
+        </form>
+        
+        
+        <a href="{% url 'signup' %}">
+          <button class="bg-green-500 text-white font-bold p-2 rounded-lg w-44" id="login" type="submit"><span>Register</span></button> 
+        </a>
+      </body>
+</html>

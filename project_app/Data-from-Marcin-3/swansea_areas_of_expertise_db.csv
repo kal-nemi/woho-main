@@ -1,0 +1,139 @@
+_id,area,created_ID
+61117c38d6f9d1d8a12495b7,Null,7030813027
+61117c38d6f9d1d8a12495b9,"Unstructured Mesh Generation , Computational Fluid Dynamics , Computational Electromagnetics , Parallel Processing",4372053126
+61117c38d6f9d1d8a12495bc,"In-silico modelling , Computational Mechanics , Large strain dynamics , Fluid-Structure Interaction , Electro-Magneto-Acousto-Mechanics , Finite Element/Volume Methods , Meshless Methods , Reduced Order Modelling",2628949666
+61117c39d6f9d1d8a12495bf,"Computational Mechanics , Computational Engineering , Computational Structural Dynamics , Discrete Element Modelling , Lattice Boltzmann method , Fluid–solid interaction , High performance computing",8911582167
+61117c39d6f9d1d8a12495d6,Null,6849649489
+61117c39d6f9d1d8a12495d9,Null,1344595830
+61117c39d6f9d1d8a12495dd,"Atomic force microscopy , Bionanotechnology , Biomanufacturing , Membrane Separation , Biofilms , Scaffolds for tissue engineering , Electrospinning",9723241030
+61117c39d6f9d1d8a12495e0,Null,1737520433
+61117c3ad6f9d1d8a12495f8,"In silico tissue engineering , Cellular biomechanics & mechanobiology , CAE for biomedical device R&D (e.g. tissue engineering scaffolds, bioreactors, microfluidic chips, etc.)",5591965795
+61117c3ad6f9d1d8a12495fc,Null,6438324105
+61117c3ad6f9d1d8a12495ff,Null,9583763176
+61117c3ad6f9d1d8a1249609,Null,6632566843
+61117c3bd6f9d1d8a124963f,"Water Treatment , Water Quality , Bio-/Chemo-sensors , Desalination , Nanomaterials , Environmental Technologies",2330466220
+61117c3bd6f9d1d8a1249642,"Computational Fluid Dynamics , Multi-physics simulations of complex industrial processes , Gas Atomisation , Optimisation",1669228664
+61117c3cd6f9d1d8a1249650,"Localised corrosion , Atmospheric corrosion; filiform corrosion and cathodic delamination , Galvanic corrosion , Corrosion of Al alloys , Metallic alloy coatings , Organic coatings , Corrosion inhibitors , Corrosion of additively manufactured components",4180747383
+61117c3dd6f9d1d8a1249674,"Mechanical Design , 3D Modelling & Simulation , Parameterisation and Optimisation",4306566943
+61117c3dd6f9d1d8a1249683,"Design of MEMS/NEMS devices , Nonlinear Structural Dynamics , Vibration-based energy harvesters , MEMS bio sensor , Experimental studies and data analysis",1668215244
+61117c3dd6f9d1d8a1249687,"Fatigue , Creep , Strain gauging , Residual stress , Nanoindentation",3793718356
+61117c3dd6f9d1d8a124968a,"Nano and Micro Plastic detection and identification , Salinity Gradient Systems (PRO, FO) , Advanced Oxidation Processes , Membrane Technologies , PPCP detection and removal",3053538430
+61117c3fd6f9d1d8a12496cd,Null,2458540383
+61117c40d6f9d1d8a12496e4,"Practical training , Operations , Key skills for Engineers , Aerospace Systems , Aircraft Maintenance , Project Planning , Risk Assessment , Lateral Thinking",7108785371
+61117c41d6f9d1d8a124971d,"Coupled modelling of hydro-sediment-morphodynamics processes , Geohazards: Landslides, Debris flows, Barrier Lake formation and breach , Flood risk management: Flash floods; Urban floods , Numerical methods and high performance computing",8901218279
+61117c41d6f9d1d8a1249720,"Finite element analysis , Material characterisation (creep/fatigue) , Optimisation , Additive layer manufacturing (ALM)",7028301249
+61117c42d6f9d1d8a1249739,"Computational Modelling , Fluid-Structure Interaction at Nano-Scale , Renewable Energy , High Speed Aerodynamics , Computational Fluid Dynamics , Data Analysis",5766716179
+61117c42d6f9d1d8a124974e,"Distributed Generation , Microgrids , Renewable Energy Sources , Energy Management , Droop control , Stability analysis , Photovoltaic , Robotics",6312401166
+61117c43d6f9d1d8a1249768,"Next Generation Galvanised Steel Alloys , Localised Corrosion , Electrochemistry  , Metallic Coatings , Corrosion Inhibitors , Product Design Engineering",7005222527
+61117c44d6f9d1d8a124977e,"Linear and Nonlinear Structural Dynamics , Aeroelasticity , Active control , Linear and Nonlinear control methods , Non-smooth systems",1505852543
+61117c44d6f9d1d8a124979b,Null,3925161620
+61117c46d6f9d1d8a12497e0,"Membrane technology , Process Design , Project Management",6693159780
+61117c47d6f9d1d8a12497ff,Null,3186037281
+61117c47d6f9d1d8a1249804,"Arterial Flow Modelling , Multiphysics & Multiscale Tissue Modelling , Bio-heat Transfer",4567096083
+61117c48d6f9d1d8a1249835,Null,1806828516
+61117c48d6f9d1d8a124984e,"Multi-Physics Modelling , Non-Newtonian Flow , Renewable Energy",8032477773
+61117c49d6f9d1d8a1249868,"Civil, Structural, and Medical Engineering , Computational Mechanics , Multiscale Modelling , Red Blood Cell Physiology , Numerical Methods , Mechanics of Materials",3321657667
+61117c49d6f9d1d8a1249882,"Mechanics of nanomaterials and nanocomposites , Electromechanical coupling at the nanoscale , Small scale effects on the nanostructures , Biomechanics of cytoskeleton in cells , Cell electromechanics and its biomedical applications",6880557897
+61117c4bd6f9d1d8a12498d1,Null,8495485959
+61117c4bd6f9d1d8a12498d4,"Raman spectroscopy , Organic solar cells , Degradation studies , Novel application of photovoltaics , Advanced characterization of printable solar cells",1755211485
+61117c4dd6f9d1d8a124990b,"Power quality, power system modeling and analysis, harmonic mitigation, renewable energy sources, energy storage. ",8886724476
+61117c4ed6f9d1d8a1249945,"Satellite Systems Design , Deployable Structures for Space Applications , Systems Engineering , Quality and Reliability Engineering , Smart Materials (shape memory alloys) , Project Management",9723810313
+61117c4ed6f9d1d8a1249948,"Chemical Engineering , Catalytic Pyrolysis , Biomass and Bioenergy",5066844442
+61117c4fd6f9d1d8a1249967,"Structural dynamics , Nonlinear vibration , Morphing aircraft , Composite structures , Rotordynamics",6380547717
+61117c4fd6f9d1d8a1249980,"Microneedles , Minimally invasive sensors , Continuous glucose monitoring (CGM) , Continuous lactate monitoring (CLM) , Interstitial therapeutic drug monitoring (iTDM)",6312147027
+61117c51d6f9d1d8a12499b2,"Computational Fluid Dynamics , Wind Energy , Blood flow modelling , Haemorheology , Haemolysis",8494325981
+61117c53d6f9d1d8a1249a0c,"Experimental Aerodynamics , Wind Turbine Aerodynamics , Flow Control , 3D Flow Separation , Wind Energy , Building Aerodynamics , Drag Reduction",9819051950
+61117c54d6f9d1d8a1249a2c,Null,6153335933
+61117c54d6f9d1d8a1249a2e,"Fluid Dynamics , Blood Flow Simulation , Mesh Generation , Geophysics , Acoustics",4982524421
+61117c54d6f9d1d8a1249a47,"Plastics Extrusion , Extrusion jointing strength , Structural design of buried pipes , Environmental performance of thermoplastic systems , Engineering management , Business Strategy",6761527887
+61117c54d6f9d1d8a1249a4a,"Microstructure and Texture Evolution , Deformation Mechanisms , Thermomechanical Processing , Phase Transformation , Structure/Property Relationship , Light Metals (Ti and Mg) , Nuclear Materials (GEN-III and GEN-IV) , EBSD , Crystal Plasticity Finite Element Modelling",2273145851
+61117c54d6f9d1d8a1249a4c,Null,8849962934
+61117c59d6f9d1d8a1249af0,"Power Systems , Power Electronics , Micro/smart- grids , Virtual Synchronous Machines , Ancillary services in future power systems  , Power quality  , Energy Management Systems , Generation and load forecast using Artificial Intelligence ",1431156887
+61117c59d6f9d1d8a1249b0e,Null,4312427619
+61117c5bd6f9d1d8a1249b42,"Ceramic Matrix Composites , Nickel Superalloys , Titanium Alloys , Additive Manufacturing , Solid State Welding Processes , Miniaturised Testing , Failure Analysis",3562453004
+61117c5bd6f9d1d8a1249b46,Null,4050264202
+61117c5bd6f9d1d8a1249b49,"Soft, responsive, and smart materials , 3D printing of soft materials , Experimental mechanics , Numerical methods for solid mechanics , Modelling composite materials at finite strain , Low carbon renewable energy",5097924645
+61117c5cd6f9d1d8a1249b66,Null,2497669132
+61117c5dd6f9d1d8a1249b7f,"Self-assembly and self-organisation in biological matter , Kinetics of bio-fiber polymerization , Semiflexible bio-polymer networks and their structural, elastic and rheological properties , Bio-adhesion, ligands and receptors , Cell motility",9778929215
+61117c5fd6f9d1d8a1249bd4,"Hydrogen , Photocatalysis",2362482364
+61117c61d6f9d1d8a1249c12,"Radio Frequency circuits , Analogue circuit design , Applications of microcontrollers",3993732881
+61117c63d6f9d1d8a1249c4c,Null,1103847708
+61117c63d6f9d1d8a1249c4f,"Manufacturing , Non-destructive testing , Image-based modelling , X-ray tomography , Finite element analysis , Thermal characterisation",7548692994
+61117c63d6f9d1d8a1249c54,"Rheometry , Haemorheology , Non-Newtonian Fluid Flow , NMR Diffusometry , Fractal Aggregation and Analysis , Fluorescence Microscopy.",1024269403
+61117c64d6f9d1d8a1249c72,"Computational fluid dynamics , Metal processing , Renewable energy devices (wind and tidal) , Drinking water quality",3123117525
+61117c65d6f9d1d8a1249cac,"Synthesis of metal oxide nanoparticles , Fabrication of mesoporous and compact oxide layers , 3rd Generation Photovoltaics , Materials Characterisation , Low-C processing of nano-colloids",7949464724
+61117c66d6f9d1d8a1249ccf,"Microscopy , Scanning Electron Microscopy , Electron Backscatter Diffraction , Grain Boundary Engineering , In-Situ Microstructural analysis , Materials Characterization , X-Ray CT",4220437852
+61117c69d6f9d1d8a1249d53,Null,5963584234
+61117c69d6f9d1d8a1249d55,"Geotechnical Engineering , Soil Stabilisation , Highway Design , Site Surveying , Sustainable Building Materials in Concrete and Soil Structures",1186118114
+61117c6bd6f9d1d8a1249d95,Null,7181697427
+61117c6dd6f9d1d8a1249dd5,Null,6454824096
+61117c77d6f9d1d8a1249f81,Null,5361231122
+61117c78d6f9d1d8a1249f9e,"Hydrology and Hydrological Modelling , Hydrometeorological Modelling , Flood Risk Management and Flood Modelling , Weather Radar and Rainfall Nowcasting , Climate Change Impact on Water Resources and Extremes , GIS, Statistical and AI Modelling of Hydrometeorologica",7075355064
+61117c78d6f9d1d8a1249fa5,Null,8877006022
+61117c78d6f9d1d8a1249fa8,"Fluid Structure Interaction , Computational Modelling , Development of Sustainable Construction Materials",9107071205
+61117c78d6f9d1d8a1249fab,"Material Chemistry , Colloid Chemistry , Polymer , Nanoparticles , Drug delivery",9124296506
+61117c78d6f9d1d8a1249fc3,"Water and Wastewater Treatment , Ozone , Advanced Oxidation Processes (AOPs) , Emerging Contaminants , Separation Processes , Reactor Engineering , Adsorption and Catalysis , Analytical Chemistry , Chromatography",9407956350
+61117c78d6f9d1d8a1249fc6,"Construction Management , Project Management , Digital Engineering Practice , Professional Development",2136015583
+61117c79d6f9d1d8a1249fe2,"Computational Engineering , High-order Finite Elements , Numerical Methods , Reduced Order Modelling , Computational Fluid Dynamics , Computational Electromagnetics , Computer Aided Design , Mesh generation",2245438949
+61117c7dd6f9d1d8a124a093,Null,3212902021
+61117c7ed6f9d1d8a124a0ad,"Computational Fluid Dynamics , Urban Fluid Mechanics , Fluid-Structure Interactions , Large Eddy Simulation , Airflow and Air Pollution Modelling , Turbulence Modelling",4175999341
+61117c7ed6f9d1d8a124a0b1,Null,1493790403
+61117c7fd6f9d1d8a124a0cb,"Manufacturing Analytics , Process optimisation and machine learning , Uncertainty Quantification , Risk based thinking, FMEAs and Organisational knowledge management , Gait Analysis and bipedal walking , Fluid flow at nano-scale , Computational Engineering",6389007972
+61117c81d6f9d1d8a124a11d,"Functional Industrial Coatings , Energy storage , Water, sanitation and hygiene , Rapid Radiative Curing and Sintering , Instrumental and Analytical Techniques",9926386985
+61117c84d6f9d1d8a124a190,Null,8192852369
+61117c84d6f9d1d8a124a193,"Printing and coating processes and materials , Coating characterization , Printed electronics scale manufacture , Thermochemical heat storage",6961968137
+61117c86d6f9d1d8a124a1d3,"Zinc oxide nanostructures , Surface science , Gas sensing , X-ray Photoelectron spectroscopy , Cryo-electron microscopy",3896027545
+61117c87d6f9d1d8a124a20c,Null,9167320981
+61117c87d6f9d1d8a124a20f,Null,5101864241
+61117c88d6f9d1d8a124a230,"Robotics and Automation , Micro and Nano Fabrication , Machine Design , 3D Printing , Medical Engineering , Biomimetics",2228573450
+61117c88d6f9d1d8a124a24b,"Creep life prediction , Process optimisation , Steel demand forecasting , Data mining in manufacturing",5443167864
+61117c8ad6f9d1d8a124a2a2,Null,3793088014
+61117c8bd6f9d1d8a124a2be,"Applied Photonics , Optical Fibre Communication , Sensor",6502847284
+61117c8cd6f9d1d8a124a2f7,"Manufacturing Systems Engineering , Big Data , Manufacturing Informatics and IoTs , Machine Learning/Deep Learning , Artificial Intelligence , Process Optimisation",9216823595
+61117c8cd6f9d1d8a124a2fa,Null,6159050558
+61117c8ed6f9d1d8a124a335,"High speed aerodynamics , Computational fluid dynamics , Molecular gas dynamics , Optimisation , Engineering education and public engagement",4285762722
+61117c8ed6f9d1d8a124a338,"Titanium alloys , Nickel superalloys , Nickel Manufacture , Grain Boundary Engineering , Semi-solid forming , Additive Layer Manufacturing , Metals Casting , Failure Analysis (Metals)",5418870298
+61117c8fd6f9d1d8a124a378,Null,4228634919
+61117c93d6f9d1d8a124a413,Null,4135783280
+61117c93d6f9d1d8a124a433,"Stochastic Analysis , Systems Biology , Cytometry , Evolutionary Computing , Intelligent Large-Scale Data Analysis/Simulation , Fractal Generation and Analysis",9939749939
+61117c95d6f9d1d8a124a476,"Electrocatalysis , Biosensors , Electrochemistry , Thin films",7872784215
+61117ca8d6f9d1d8a124a749,"Carbon Capture and Utilisation , Industrial Decarbonisation , Low Carbon Energy , CO2 Capture Materials , CO2 Conversion Catalysis , Materials Science & Engineering , Chemistry & Electrochemistry , Energy Transport Materials",5199040670
+61117ca8d6f9d1d8a124a74c,"Non-Newtonian Fluid Mechanics , Rheology , Haemorheology , Rheometry , Process Engineering , Cavitation",6207255434
+61117ca8d6f9d1d8a124a750,"ACTIVE Buildings , Coatings used for corrosion protection to renewable energy generation , Solution processed perovskite solar cells , Building integrated photovoltaics , Coating applications and development , Corrosion science and engineering ",1961257271
+61117ca8d6f9d1d8a124a753,"Thermo-mechanical Fatigue  , Creep Lifing , Titanium Alloys , Nickel Alloys , Crystallographic Texture , Fatigue Lifing , Fatigue/Creep/Environment Interactions",4789710712
+61117caad6f9d1d8a124a78a,"High Speed Aerodynamics  , Computational Fluid Dynamics  , Data Analysis , Geoenvironmental Engineering , Geotechnical Engineering , Coupled Processes in the Ground , Thermo/Hydraulic/Chemical/Mechanical/Biological Behaviour , Numerical Modelling",5852739696
+61117caad6f9d1d8a124a78d,"Nanoelectronics , Nanomaterials , Nanobiosensors , Nanotechnology and Nanoscience , Sensor Technologies , Semiconductor Surface and Interface , Scanning Probe Microscopy",2168029340
+61117caad6f9d1d8a124a7aa,"Thin Film Photovoltaics , Deposition and Curing , Scaling , Electrochemical Characterisation , Corrosion , Dye-Sensitized Solar Cells , Organolead Halide Perovskite , Kesterite CZTS",7527529814
+61117cacd6f9d1d8a124a80f,Null,2645960443
+61117caed6f9d1d8a124a84a,Null,3024094098
+61117cafd6f9d1d8a124a86e,"Systems Cytometry , Nanoparticle metrology and toxicology , Nanoparticle fluorophores",3781890990
+61117cb0d6f9d1d8a124a88e,Null,1890427583
+61117cb0d6f9d1d8a124a892,"Coastal Flooding , Erosion , Coastal Engineering",7782163102
+61117cb0d6f9d1d8a124a8b6,"Ferrous Process Metallurgy , Raw Materials Processing , Materials Characterisation , Mechanical Metallurgy , Refractory Materials",7683538064
+61117cb3d6f9d1d8a124a921,"Metallurgy , Galvanising , Metallic coatings , Corrosion , Stainless steel , Zinc aluminium alloys , External funding , Industrial engagement  , Doctoral training",7240630761
+61117cb6d6f9d1d8a124a9a7,"Nanoscience and Nanotechnology , Nanomaterials , Nanoclusters and Nanoparticles , Nanocatalysts, Nanosensors, Nanophotonics , Neuromorphic Systems for Information Processing , Surface Science including Atomic Manipulation , Innovations in Instrumentation",4127048471
+61117cd8d6f9d1d8a124ad0d,"Marine energy , Ocean energy , Wave , Tidal turbine",9811118593
+61117cd9d6f9d1d8a124ad26,Null,3796799822
+61117cd9d6f9d1d8a124ad29,Null,9692018684
+61117cd9d6f9d1d8a124ad2c,Null,1497640618
+61117cd9d6f9d1d8a124ad2f,Null,6518021608
+61117cd9d6f9d1d8a124ad32,Null,9140118669
+61117cdad6f9d1d8a124ad4a,Null,2896862430
+61117cdbd6f9d1d8a124ad74,"Additive Layer Manufacturing , High Throughput Materials Characterisation , Novel Alloy Development , Multi-physics coupled Computational Fluids Dynamics , Finite Element Analysis , Life cycle assessment , computational modelling",9868132974
+61117cdfd6f9d1d8a124adcb,"Microelectromechanical Systems , Nanoelectromechanical Systems , Sensors and Actuators , Optical MEMs , RF MEMS , Biological/Medical Transducers , Micro-batteries",6651224154
+61117ce0d6f9d1d8a124ade8,"Computational Engineering , Data Mining and Visual Computing , Civil and Structural Engineering , Geomechanics, Oil & Gas Reservoir , Concrete, Composite and Heterogeneous Material",8553255971
+61117ce0d6f9d1d8a124adea,Null,9213711486
+61117ce0d6f9d1d8a124aded,Null,5680449970
+61117d2fd6f9d1d8a124b3e3,"Computational modelling , Laboratory experimentation , Coastal and estuarine hydrodynamics and morphodynamics , Coastal flood risk , Environmental impacts of marine renewables , Nature-based coastal engineering , Climate change impacts on the coastal environment",7558645232
+61117d2fd6f9d1d8a124b3e5,"X-ray microtomography , Aerospace materials , Characterisation , Bioinspiration",3338421500
+61117d2fd6f9d1d8a124b3e8,Simulation and modelling of semiconductor devices.,7164678060
+61117d30d6f9d1d8a124b3fb,"Miniaturised Testing , Additive Layer Manufacturing (ALM) processes , Nickel Superalloys (single crystals, polycrystalline) , Thermo-mechanical Fatigue , Fatigue Lifing , Failure Analysis , Non-Destructive Evaluation , Titanium Alloys",5785772249
+61117d32d6f9d1d8a124b40e,"Synthetic and materials chemistry , Advanced devices such as photovoltaics (solar cells) , High temperature thermal chemistry , Steel manufacturing and value-added products , Surface chemistry and sorption processes , Water treatment , Manufacturing optimisation",2652763870
+61117d32d6f9d1d8a124b41f,Null,7459451895
+61117d35d6f9d1d8a124b43e,Computational Materials,8526936818
+61117d37d6f9d1d8a124b452,"Fatigue & fracture of advanced structural metals , “Cold dwell” sensitivity in titanium alloys , Crack initiation and growth mechanisms , Role of environment on mechanical performance , High temperature characterisation of ceramic matrix c",5327462676
+61117d3ad6f9d1d8a124b479,"Water treatment , Desalination , Novel membrane separation processes , Membrane nanotechnology , Application of atomic force microscopy (AFM) to chemical and process engineering",4055183300
+61117d3ad6f9d1d8a124b47b,"Computational modelling of ore heap leaching processes , Centrifugal shape casting for TiAl blades in aerospace engines , Metal-metal seal design , Vertical axis wind and water turbine design , Micro-blood pump design optimisation , Macro-segregation of metals",5349126533
+61117d3bd6f9d1d8a124b48f,Null,3359791057
+61117d3bd6f9d1d8a124b493,"Printing , Coating , Fluid Dynamics , Rheology , Sensors , Printed Electronics , Statistics , Process Optimisation , Manufacturing",3944179072
+61117d40d6f9d1d8a124b4d6,"Uncertainty Quantification (UQ) in Computational Mechanics , vibration energy harvesting , Dynamics of Complex Engineering Systems , Nanomechanics",1040855823

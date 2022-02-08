@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="flex justify-center flex-1 h-auto bg-white px-4">
+    <main class=" flex-1 grid relative overflow-y-auto focus:outline-none">
+        <div class="py-2">
+            <div class="px-4 sm:px-6 md:px-0">
+                <!-- heading -->
+                <div class="m-3 font-semibold text-3xl mb-2  ">
+                    UKCCM - Services for Buyers, for Suppliers & Collaboration
+                    <div class="bg-gray-100 h-2 w-10/12 mt-2 "></div>
+                </div>
+
+                <!-- cards -->
+                <div class="pt-3 pr-2 pl-3  flex space-x-4 w-10/12">
+                    <div class="p-3 flex-1 bg-gray-100 rounded-lg border-2 ">
+                        <h1 class=" font-semibold text-lg text-center  ">
+                            Buyers
+                        </h1>
+                        <p>
+                            <a href="{% url 'directory' %}">Find New Supplier</a>
+                            
+                        </p>
+
+                        Match your Process & Skills Needs
+
+                        Publish your Work as Tenders.
+                        Publish your requirements to all.
+                        Publish to Private Supply Chains.
+                        Register, Login & Submit new tender
+                    </div>
+                    <div class="p-3 flex-1 bg-gray-100 rounded-lg border-2 ">
+                        <h1 class="font-semibold text-lg text-center ">
+                            Suppliers
+                        </h1>
+                        <p>
+                            <a href="{% url 'tender_search' %}">Find NEW Business</a>
+                            
+                        </p>
+                        <h3>
+                            Search for Subcontractors
+                        </h3>
+                        <p>
+                            Use Project Spaces to Deliver View our on-line Catalogues.
+                            Join - Get Your Company Profiled.
+                            This company has been competency profiled by WMG
+                        </p>
+                    </div>
+                    <div class="p-3 flex-1 bg-gray-100 rounded-lg border-2 text-center  ">
+                        <h1 class="font-semibold text-lg">
+                            Tools for Networking
+                        </h1>
+                        
+                        <a href="{% url 'clusters' %}">Clusters for Collaboration</a>
+                        Our Members Showcases
+
+                        Discussions | Tasks | Contacts
+                        e-Commerce Portals and Guidance
+                        Supply Chain Visibility Module
+                        Tell me more.
+                    </div>
+
+                </div>
+
+                <div class="m-3 font-semibold text-xl mb-2 ">
+                    WMG Incubator/Venture Builder for Ambitious Startups:
+                </div>
+                <div class=" flex w-full">
+                    <div class=" m-1 flex-1  ">
+                        <p class="text-justify p-2">
+                            The incubator will provide a range of workshops, technical and business model support and
+                            guidance to kick start your business.
+                            The wide international network of WMG and the University of
+                            Warwick will provide support partners and resources to enable the growth and success of the
+                            start-ups incubated.
+                        </p>
+                        <div class="bg-gray-100 rounded-md m-2 p-2 font-medium ">
+                            Growth Hacking Workshops
+                        </div>
+                        <div class="bg-gray-100 rounded-md m-2 p-2 font-medium ">
+                            Support with Pivoting to more fruitful markets and applications:
+                        </div>
+                        <div class="bg-gray-100 rounded-md m-2 p-2 font-medium ">
+                            Fully Equipped facilities, Machine shop, 3D Printers, CAD, 
+                            Deep learning, Electronics lab, Rasberry Pi, Ardinuo support.
+                        </div>
+                        <div class="bg-gray-100 rounded-md m-2 p-2 font-medium ">
+                            Innovating for Markets in Engineering, Automotive, healthcare, retail, etc. 
+                        </div>
+                        <div class="bg-gray-100 rounded-md m-2 p-2 font-medium ">
+                            Concept to Model
+                        </div>
+                    </div>
+                    <div>
+                        <img class="p-5 flex-1 h-auto  " src="main-feature.jpg" alt="incubator image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock body %}

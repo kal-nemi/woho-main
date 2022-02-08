@@ -1,0 +1,730 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>UK CCM</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="ukccm_logo.png"/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	</head>
+
+<body >
+    <style>
+            /* This example part of kwd-dashboard see https://kamona-wd.github.io/kwd-dashboard/ */
+        /* So here we will write some classes to simulate dark mode and some of tailwind css config in our project */
+        :root {
+          --light: #edf2f9;
+          --dark: #152e4d;
+          --darker: #12263f;
+
+          --color-red: #dc2626;
+          --color-green: #16a34a;
+          --color-blue: #2563eb;
+          --color-cyan: #0891b2;
+          --color-teal: #0d9488;
+          --color-fuchsia: #c026d3;
+          --color-orange: #ea580c;
+          --color-yellow: #ca8a04;
+          --color-violet: #7c3aed;
+        }
+
+        [x-cloak] { display: none; }
+
+        .dark .dark\:text-light {
+          color: var(--light);
+        }
+
+        .dark .dark\:bg-dark {
+          background-color: var(--dark);
+        }
+
+        .dark .dark\:bg-darker {
+          background-color: var(--darker);
+        }
+
+        .dark .dark\:text-gray-300 {
+          color: #D1D5DB;
+        }
+
+        .dark .dark\:text-blue-500 {
+          color: #3B82F6;
+        }
+
+        .dark .dark\:text-blue-100 {
+          color: #DBEAFE;
+        }
+
+        .dark .dark\:hover\:text-light:hover {
+          color: var(--light);
+        }
+
+        .dark .dark\:border-blue-800 {
+          border-color: #1e40af;
+        }
+
+        .dark .dark\:border-blue-700 {
+          border-color: #1D4ED8;
+        }
+
+        .dark .dark\:bg-blue-600 {
+            background-color: #2563eb;
+        }
+
+        .dark .dark\:hover\:bg-blue-600:hover {
+          background-color: #2563eb;
+        }
+
+        .hover\:overflow-y-auto:hover {
+            overflow-y: auto;
+        }
+
+
+
+    </style>
+
+    <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" >
+          <!--  -->
+          <div class="flex h-screen antialiased text-gray-900 bg-white dark:bg-dark dark:text-light">
+            <!-- Loading screen -->
+            <div
+              x-ref="loading"
+              class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-opacity-90 bg-white"
+            >
+              Loading.....
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="flex-shrink-0 hidden w-64 bg-gray-50  dark:border-blue-800 dark:bg-darker md:block">
+              <div class="flex flex-col h-full">
+                <!-- Sidebar links -->
+                <nav aria-label="Main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
+
+
+                  <!-- Components links -->
+                  <div x-data="{ isActive: false, open: false }">
+                    <a
+                      href="#"
+                      class="inline-block text-center justify-center px-5 pb-3 text-3xl font-bold text-black  dark:text-light">
+                      <img src="ukccmlogo.png" height="40" width="40" class="float-left mr-3 -ml-4" alt="SU">UK CCM
+                    </a>
+                    <!-- active classes 'bg-blue-100 dark:bg-blue-600' -->
+                    <!-- Search -->
+                    <!-- <a
+                      href="{% url 'podacity' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base"> Search </span>
+
+                    </a> -->
+
+                    <a
+                      href="{% url 'home' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Home</span>
+
+                    </a>
+                    <a
+                      href="{% url 'directory' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Directory</span>
+
+                    </a>
+                    <a
+                      href="{% url 'tender_search' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Tender</span>
+
+                    </a>
+                    <a
+                      href="{% url 'partner_search' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Partner Search</span>
+
+                    </a>
+                    <!-- <a
+                      href="{% url 'projects' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Projects</span>
+
+                    </a> -->
+                    <a
+                      href="{% url 'clusters' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Clusters</span>
+
+                    </a>
+                    <!-- <a
+                      href="{% url 'search_new' %}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:underline hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-grey-50 text-base">Search</span>
+
+                    </a> -->
+                    <!--Learn-->
+
+                    <!-- <a
+                      href="{% url 'expertise_map_new'%}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base"> Startup Map </span>
+                    </a> -->
+                    <!-- <a
+                      href="{% url 'expertise_map'%}"
+
+                      class="flex items-center p-3 text-black transition-colors rounded-r-3xl dark:text-light hover:bg-gray-300 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base"> Expertise Map (Semantic) </span>
+                    </a> -->
+
+                  </div>
+
+
+
+
+                </nav>
+
+                <!-- Sidebar footer -->
+
+              </div>
+            </aside>
+
+            <div class="flex flex-col flex-1 min-h-screen overflow-x-hidden overflow-y-auto">
+              <!-- Navbar -->
+              <header class="relative  bg-gray-50 dark:bg-darker">
+                <div class="flex items-center  justify-between p-2  dark:border-blue-800">
+                  <!-- Mobile menu button -->
+                  <button
+                    @click="isMobileMainMenuOpen = !isMobileMainMenuOpen"
+                    class="p-1 text-blue-400 transition-colors duration-200 rounded-md bg-blue-50 hover:text-blue-600 hover:bg-blue-100 dark:hover:text-light dark:hover:bg-blue-700 dark:bg-dark md:hidden focus:outline-none focus:ring"
+                  >
+                    <span class="sr-only">Open main manu</span>
+                    <span aria-hidden="true">
+                      <svg
+                        class="w-8 h-8"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    </span>
+                  </button>
+
+                  <!-- Brand -->
+                  <a
+                    href="#"
+                    class=" inline-block text-2xl font-bold tracking-wider text-white uppercase dark:text-light">
+                    <img src="project_app\swansea-university-logo.svg" class="lg:hidden md:hidden" alt="SU logo">
+                  </a>
+
+                  <!-- Mobile sub menu button -->
+                  <button
+                    @click="isMobileSubMenuOpen = !isMobileSubMenuOpen"
+                    class="p-1 text-blue-400 transition-colors duration-200 rounded-md bg-blue-50 hover:text-blue-600 hover:bg-blue-100 dark:hover:text-light dark:hover:bg-blue-700 dark:bg-dark md:hidden focus:outline-none focus:ring"
+                  >
+                    <span class="sr-only">Open sub manu</span>
+                    <span aria-hidden="true">
+                      <svg
+                        class="w-8 h-8"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+
+                  <!-- Desktop Right buttons -->
+                  <nav aria-label="Secondary" class="hidden space-x-2 md:flex md:items-center">
+
+                    <h3 class="text-gray-400">{{user.get_full_name}}</h3>
+                    <!-- User avatar button -->
+                    <div class="relative" x-data="{ open: false }">
+                      <button
+                        @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
+                        type="button"
+                        aria-haspopup="true"
+                        :aria-expanded="open ? 'true' : 'false'"
+                        class="transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
+                        <span class="sr-only">User menu</span>
+                        <img class="w-10 h-10 rounded-full" src="project_app\static\assets\media\users\default.jpg" alt="Your Image" />
+                      </button>
+
+                      <!-- User dropdown menu -->
+                      <div class="text-center">
+                      <div
+                        x-show="open"
+                        x-ref="userMenu"
+                        x-transition:enter="transition-all transform ease-out"
+                        x-transition:enter-start="translate-y-1/2 opacity-0"
+                        x-transition:enter-end="translate-y-0 opacity-100"
+                        x-transition:leave="transition-all transform ease-in"
+                        x-transition:leave-start="translate-y-0 opacity-100"
+                        x-transition:leave-end="translate-y-1/2 opacity-0"
+                        @click.away="open = false"
+                        @keydown.escape="open = false"
+                        class="absolute -right-1 py-0 w-44 mt-2 bg-white rounded-3xl overflow-hidden shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
+                        tabindex="-1"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-label="User menu"
+                        style= "z-index : 1;">
+                        <div class="justify-items-center pt-2">
+                          <button
+                            @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
+                            type="button"
+                            aria-haspopup="true"
+                            :aria-expanded="open ? 'true' : 'false'"
+                            class="transition-opacity duration-200 rounded-full h-20 w-20 dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
+
+                            <img class="w-28 border-b h-20 rounded-full" src="project_app\static\assets\media\users\default.jpg" alt="Your Image" />
+                          </button>
+                            <a
+                              href=""
+                              role="menuitem"
+                              class="block px-4 border-b py-2 text-sm text-gray-700 transition-colors hover:bg-gray-300 dark:text-light dark:hover:bg-blue-600"
+                            >
+                              {{user.get_full_name}}
+                            </a>
+                        </div>
+                        <div class="hover:bg-gray-300">
+                        <a
+                          href="{% url "logout"%}"
+                          role="menuitem"
+                          class="inline-flex w-full justify-center px-4 py-1 text-sm text-gray-700 transition-colors dark:text-light dark:hover:bg-blue-600"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 px-1 float-left rotate-180"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Sign Out
+                        </a>
+                      </div>
+                      </div>
+                    </div>
+                  </nav>
+
+                  <!-- Mobile sub menu -->
+                  <nav
+                    x-transition:enter="transition duration-200 ease-in-out transform sm:duration-500"
+                    x-transition:enter-start="-translate-y-full opacity-0"
+                    x-transition:enter-end="translate-y-0 opacity-100"
+                    x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+                    x-transition:leave-start="translate-y-0 opacity-100"
+                    x-transition:leave-end="-translate-y-full opacity-0"
+                    x-show="isMobileSubMenuOpen"
+                    @click.away="isMobileSubMenuOpen = false"
+                    class="absolute flex items-center p-4 bg-white rounded-md shadow-lg dark:bg-darker top-16 inset-x-4 md:hidden"
+                    aria-label="Secondary"
+                    style="z-index: 1;"
+                  >
+                    <div class="space-x-2">
+                      <!-- Toggle dark theme button -->
+
+
+                      <!-- Notification button -->
+
+
+                      <!-- Search button -->
+
+
+                      <!-- Settings button -->
+
+                    </div>
+
+                    <!-- User avatar button -->
+                    <div class="relative ml-auto" x-data="{ open: false }">
+                      <button
+                        @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
+                        type="button"
+                        aria-haspopup="true"
+                        :aria-expanded="open ? 'true' : 'false'"
+                        class="transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
+                        <span class="sr-only">User menu</span>
+                        <img class="w-10 h-10 rounded-full" src="project_app\static\assets\media\users\default.jpg" alt="Your Image" />
+                      </button>
+
+                      <!-- User dropdown menu -->
+                      <div class="text-center">
+                      <div
+                        x-show="open"
+                        x-ref="userMenu"
+                        x-transition:enter="transition-all transform ease-out"
+                        x-transition:enter-start="translate-y-1/2 opacity-0"
+                        x-transition:enter-end="translate-y-0 opacity-100"
+                        x-transition:leave="transition-all transform ease-in"
+                        x-transition:leave-start="translate-y-0 opacity-100"
+                        x-transition:leave-end="translate-y-1/2 opacity-0"
+                        @click.away="open = false"
+                        @keydown.escape="open = false"
+                        class="absolute -right-1 py-0 w-44 mt-2 bg-white rounded-3xl overflow-hidden shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
+                        tabindex="-1"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-label="User menu"
+                        style= "z-index : 1;">
+                        <div class="justify-items-center pt-2">
+                          <button
+                            @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
+                            type="button"
+                            aria-haspopup="true"
+                            :aria-expanded="open ? 'true' : 'false'"
+                            class="transition-opacity duration-200 rounded-full h-20 w-20 dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100">
+
+                            <img class="w-28 border-b h-20 rounded-full" src="project_app\static\assets\media\users\default.jpg" alt="Your Image" />
+                          </button>
+                            <a
+                              href=""
+                              role="menuitem"
+                              class="block px-4 border-b py-2 text-sm text-gray-700 transition-colors hover:bg-gray-300 dark:text-light dark:hover:bg-blue-600"
+                            >
+                              {{user.get_full_name}}
+                            </a>
+                        </div>
+                        <div class="hover:bg-gray-300">
+                        <a
+                          href="{% url 'logout'%}"
+                          role="menuitem"
+                          class="inline-flex w-full justify-center px-4 py-1 text-sm text-gray-700 transition-colors dark:text-light dark:hover:bg-blue-600"
+                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 px-1 float-left rotate-180"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Sign Out
+                        </a>
+                      </div>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+                <!-- Mobile main manu -->
+                <div
+                  class="border-b md:hidden dark:border-blue-800"
+                  x-show="isMobileMainMenuOpen"
+                  @click.away="isMobileMainMenuOpen = false"
+                >
+                  <nav aria-label="Main" class="px-2 py-4 space-y-2">
+                    <!-- Search links -->
+                    <div x-data="{ isActive: false, open: false}">
+                      <!-- active & hover classes 'bg-blue-100 dark:bg-blue-600' -->
+                      <!-- <a
+                        href="{% url 'podacity' %}"
+
+                        class="flex items-center p-2 text-black0 transition-colors rounded-r-3xl dark:text-light hover:bg-blue-100 dark:hover:bg-blue-600"
+                        :class="{'bg-blue-100 dark:bg-blue-600': isActive || open}"
+                        role="button"
+                        aria-haspopup="true"
+                        :aria-expanded="(open || isActive) ? 'true' : 'false'"
+                      >
+                        <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base"> Search </span>
+
+                      </a> -->
+
+                    </div>
+
+                    <div x-data="{ isActive: false, open: false}">
+                      <!-- active & hover classes 'bg-blue-100 dark:bg-blue-600' -->
+                      <a
+                      href="{% url 'search_new'%}"
+
+                      class="flex items-center p-2 text-black transition-colors rounded-r-3xl dark:text-light hover:bg-blue-100 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+						  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base">Search</sup> </span>
+                      </a>
+
+                    </div>
+
+                    <!--Learn-->
+                    <div x-data="{ isActive: false, open: false}">
+                      <!-- active & hover classes 'bg-blue-100 dark:bg-blue-600' -->
+                      <a
+                      href="{% url 'expertise_map'%}"
+
+                      class="flex items-center p-2 text-black transition-colors rounded-r-3xl dark:text-light hover:bg-blue-100 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base">Expertise Map</sup> </span>
+                      </a>
+
+                    </div>
+
+                    <div x-data="{ isActive: false, open: false}">
+                      <!-- active & hover classes 'bg-blue-100 dark:bg-blue-600' -->
+                      <!-- <a
+                      href="{% url 'expertise_map_new'%}"
+
+                      class="flex items-center p-2 text-black0 transition-colors rounded-r-3xl dark:text-light hover:bg-blue-100 dark:hover:bg-blue-600"
+                      :class="{ 'bg-blue-100 dark:bg-blue-600': isActive || open }"
+                      role="button"
+                      aria-haspopup="true"
+                      :aria-expanded="(open || isActive) ? 'true' : 'false'">
+
+                      <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                      </span>
+                      <span class="ml-2 font-medium text-black text-base">Expertise New</sup> </span>
+                      </a> -->
+
+                    </div>
+
+                  </nav>
+                </div>
+              </header>
+
+              <!-- Main content -->
+              {% block body %}
+              {% endblock body %}
+
+
+            </div>
+
+            <section
+              x-cloak
+              x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+              x-transition:enter-start="-translate-x-full"
+              x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+              x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="-translate-x-full"
+              x-show="isSearchPanelOpen"
+              @keydown.escape="isSearchPanelOpen = false"
+              class="fixed inset-y-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
+            >
+              <div class="absolute right-0 p-2 transform translate-x-full">
+                <!-- Close button -->
+                <button @click="isSearchPanelOpen = false" class="p-2 text-white rounded-md focus:outline-none focus:ring">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+
+            </section>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+    <!-- not required  -->
+    <script>
+          const setup = () => {
+            const getTheme = () => {
+              if (window.localStorage.getItem('dark')) {
+                return JSON.parse(window.localStorage.getItem('dark'))
+              }
+              return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+            }
+
+            const setTheme = (value) => {
+              window.localStorage.setItem('dark', value)
+            }
+
+            return {
+              loading: true,
+              isDark: getTheme(),
+              toggleTheme() {
+                this.isDark = !this.isDark
+                setTheme(this.isDark)
+              },
+              setLightTheme() {
+                this.isDark = false
+                setTheme(this.isDark)
+              },
+              setDarkTheme() {
+                this.isDark = true
+                setTheme(this.isDark)
+              },
+              isSettingsPanelOpen: false,
+              openSettingsPanel() {
+                this.isSettingsPanelOpen = true
+                this.$nextTick(() => {
+                  this.$refs.settingsPanel.focus()
+                })
+              },
+              isNotificationsPanelOpen: false,
+              openNotificationsPanel() {
+                this.isNotificationsPanelOpen = true
+                this.$nextTick(() => {
+                  this.$refs.notificationsPanel.focus()
+                })
+              },
+              isSearchPanelOpen: false,
+              openSearchPanel() {
+                this.isSearchPanelOpen = true
+                this.$nextTick(() => {
+                  this.$refs.searchInput.focus()
+                })
+              },
+              isMobileSubMenuOpen: false,
+              openMobileSubMenu() {
+                this.isMobileSubMenuOpen = true
+                this.$nextTick(() => {
+                  this.$refs.mobileSubMenu.focus()
+                })
+              },
+              isMobileMainMenuOpen: false,
+              openMobileMainMenu() {
+                this.isMobileMainMenuOpen = true
+                this.$nextTick(() => {
+                  this.$refs.mobileMainMenu.focus()
+                })
+              },
+            }
+          }
+    </script>
+
+</body>
+</html>

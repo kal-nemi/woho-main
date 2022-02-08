@@ -1,0 +1,814 @@
+// for getting url after applying ordering
+                // function finalurl() {
+                //     var url = new URL(window.location.href);
+                //     console.log(url)
+                //     var search_params = url.searchParams;
+                //     search_params.set('value', document.getElementById("tvalue").value);
+                //     url.search = search_params.toString();
+                //     var new_url = url.toString();
+                //     return new_url
+                // }
+<!-- Select -->
+<div class=" m-2 mt-4">
+    You can perform a specific search for a Skill, Process or Location within companies✨
+    <form method="GET" action="" autocomplete="off">
+        <div class="flex w-11/12 mt-3 ">
+            <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+            <div class="dropdown inline-flex flex-1 p-2 items-center justify-center text-center">Process:
+                <!-- DropDown Process -->
+                <div class="mx-2 w-full">
+                    <button
+                        class="text-white w-full  bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:ring-gray-500  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center "
+                        type="button" data-dropdown-toggle="dropdown1">
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu for process -->
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4"
+                        id="dropdown1">
+                        <ul class="py-1 " aria-labelledby="dropdown1">
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Chemical</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All
+                                    Market</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-flex flex-1 p-2 items-center justify-center text-center">Skills:
+                <!-- DropDown -->
+                <div class="mx-2 w-full">
+                    <button
+                        class="text-white w-full  bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:ring-gray-500  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center "
+                        type="button" data-dropdown-toggle="dropdown">
+
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4"
+                        id="dropdown">
+                        <ul class="py-1 " aria-labelledby="dropdown">
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Chemical</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All
+                                    Market</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-flex flex-1 p-2 items-center justify-center text-center">Keyword:
+                <!-- DropDown -->
+                <div class="mx-2 w-full">
+                    <button
+                        class="text-white w-full  bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:ring-gray-500  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center "
+                        type="button" data-dropdown-toggle="dropdown">
+
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4"
+                        id="dropdown">
+                        <ul class="py-1 " aria-labelledby="dropdown">
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Chemical</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All
+                                    Market</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-flex flex-1 p-2 items-center justify-center text-center">Location:
+                <!-- DropDown -->
+                <div class="mx-2 w-full">
+                    <button
+                        class="text-white w-full  bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:ring-gray-500  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center "
+                        type="button" data-dropdown-toggle="dropdown">
+
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4"
+                        id="dropdown">
+                        <ul class="py-1 " aria-labelledby="dropdown">
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Chemical</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All
+                                    Market</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-flex flex-1 p-2 items-center justify-center text-center">Status:
+                <!-- DropDown -->
+                <div class="mx-2 w-full">
+                    <button
+                        class="text-white w-full  bg-gray-100 hover:bg-gray-100 focus:ring-4 focus:ring-gray-500  rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center "
+                        type="button" data-dropdown-toggle="dropdown">
+
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4"
+                        id="dropdown">
+                        <ul class="py-1 " aria-labelledby="dropdown">
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Chemical</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All
+                                    Market</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <script
+                    src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
+
+
+<form method="GET" action="" autocomplete="off">
+    <div class="bg-white flex p-4" >
+        <!-- <span class="w-auto flex justify-end  items-center text-gray-500 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </span> -->
+        <!-- DropDown -->
+        <div class="hidden w-3/5">
+            <button class="text-white  bg-black hover:bg-gray-800 focus:ring-4 focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center justify-center " type="button" data-dropdown-toggle="dropdown">
+                Select Keyword 
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow  my-4" id="dropdown">
+                <ul class="py-1 " aria-labelledby="dropdown">
+                    <li>
+                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">{{keyword}}</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Presswork</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Wielding</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Automotive</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All Market</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+    </div>
+</form>
+
+
+
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div class="flex justify-center flex-1 h-auto bg-white p-4">
+    <main class=" flex-1 grid relative overflow-y-auto focus:outline-none">
+        <div class="py-3">
+            <div>
+                <div class="p-2">
+                    <h1 class="text-3xl font-bold  w-2/3">Patner Search</h1>
+                </div>
+                <div class="p-2">
+                    <h2 class="text-sm text-gray-600 w-2/3">Enhance Search result with: </h2>
+                </div>
+                <div class="p-2">
+                    <h2 class="text-lg text-gray-800 w-2/3">Select processes for potential partners (please tick boxes of preference) : </h2>
+                </div>
+                
+                <!-- script for multiselect  -->
+                <script>
+                    // function requires an id as parameter
+                    function finalurl() {
+                        console.log("here");
+                        var url = new URL(window.location.href);
+                        console.log(url)
+                        var search_params = url.searchParams;
+                        search_params.set('value', document.getElementById("select").value);
+                        url.search = search_params.toString();
+                        var new_url = url.toString();
+                        return new_url
+                    }
+
+                    function dropdown(id) {
+                        return {
+                            options: [],
+                            selected: [],
+                            show: false,
+                            open() { this.show = true },
+                            close() { this.show = false },
+                            isOpen() { return this.show === true },
+                            select(index, event) {
+
+                                if (!this.options[index].selected) {
+
+                                    this.options[index].selected = true;
+                                    this.options[index].element = event.target;
+                                    this.selected.push(index);
+
+                                } else {
+                                    this.selected.splice(this.selected.lastIndexOf(index), 1);
+                                    this.options[index].selected = false
+                                }
+                            },
+                            remove(index, option) {
+                                this.options[option].selected = false;
+                                this.selected.splice(index, 1);
+
+
+                            },
+                            loadOptions() {
+                                const options = document.getElementById(id).options;
+                                for (let i = 0; i < options.length; i++) {
+                                    this.options.push({
+                                        value: options[i].value,
+                                        text: options[i].innerText,
+                                        selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
+                                    });
+                                }
+
+
+                            },
+                            selectedValues(){
+                                return this.selected.map((option)=>{
+                                    return this.options[option].value;
+                                })
+                            }
+                        }
+                    }
+                </script>
+
+                <!--Multiselect-->
+                <div class="p-2">
+                    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+                    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+
+                    <style>
+                        [x-cloak] {
+                            display: none;
+                        }
+                    </style>
+                    <select class="hidden" x-cloak id="select" >
+                        {% for item in processes %}
+                        <option value="{{item}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div x-data="dropdown('select')" x-init="loadOptions()"  class="flex flex-wrap -mx-3 mb-6">
+                    <form>
+                        <input name="values" type="hidden" x-bind:value="selectedValues()" >
+                        <div class="w-full px-3 mb-6 md:mb-0">
+                        <div class="flex flex-col items-center relative">
+                            <div x-on:click="open" class="w-full  svelte-1l8159u">
+                                <div class=" flex border border-black bg-white rounded svelte-1l8159u">
+                                    <div class="flex flex-auto flex-wrap">
+                                        <template x-for="(option,index) in selected" :key="options[option].value">
+                                            <div
+                                                class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-full text-teal-700 bg-teal-100 border border-teal-300 ">
+                                                <div class="text-xs font-normal leading-none max-w-full flex-initial x-model="
+                                                    options[option]" x-text="options[option].text"></div>
+                                                <div class="flex flex-auto flex-row-reverse">
+                                                    <div x-on:click="remove(index,option)">
+                                                        <svg class="fill-current h-6 w-6 " role="button" viewBox="0 0 20 20">
+                                                            <path d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
+                                                        c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697s1.228-0.469,1.697,0L10,8.183
+                                                        l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0s0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
+                                                        C14.817,13.62,14.817,14.38,14.348,14.849z" />
+                                                        </svg>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <div x-show="selected.length    == 0" class="flex-1">
+                                            <input placeholder="Categories"
+                                                class="bg-transparent p-1 appearance-none outline-none h-full
+                                                block
+                                                w-full
+                                                bg-gray-200
+                                                text-gray-700
+                                                rounded
+                                                py-3
+                                                px-4
+                                                mb-3
+                                                leading-tight
+                                                focus:outline-none focus:bg-white"
+                                                
+                                                x-bind:value="selectedValues()"
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200 svelte-1l8159u">
+
+                                        <button type="button" x-show="isOpen() === true" x-on:click="open"
+                                            class="cursor-pointer w-6 h-6 text-gray-600 outline-none  focus:outline-none">
+                                            <svg version="1.1" class="fill-current h-4 w-4" viewBox="0 0 20 20">
+                                                <path d="M17.418,6.109c0.272-0.268,0.709-0.268,0.979,0s0.271,0.701,0,0.969l-7.908,7.83
+                c-0.27,0.268-0.707,0.268-0.979,0l-7.908-7.83c-0.27-0.268-0.27-0.701,0-0.969c0.271-0.268,0.709-0.268,0.979,0L10,13.25
+                L17.418,6.109z" />
+                                            </svg>
+
+                                        </button>
+                                        <button type="button" x-show="isOpen() === false" @click="close"
+                                            class="cursor-pointer w-6 h-6 text-gray-600 outline-none  focus:outline-none">
+                                            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+                                                <path d="M2.582,13.891c-0.272,0.268-0.709,0.268-0.979,0s-0.271-0.701,0-0.969l7.908-7.83
+                c0.27-0.268,0.707-0.268,0.979,0l7.908,7.83c0.27,0.268,0.27,0.701,0,0.969c-0.271,0.268-0.709,0.268-0.978,0L10,6.75L2.582,13.891z
+                " />
+                                            </svg>
+
+                                        </button>
+                                        <button type="submit"
+                                            class="bg-blue-900 hover:bg-blue-800 rounded-xl text-white p-2 pl-4 pr-4 ml-2">
+                                            <p class="font-semibold text-xs">Search</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4">
+                                <div x-show.transition.origin.top="isOpen()"
+                                    class="absolute shadow top-100 bg-white z-40 w-full lef-0 rounded max-h-select overflow-y-auto svelte-5uyqqj"
+                                    x-on:click.away="close">
+                                    <div class="flex flex-col w-full">
+                                        <template x-for="(option,index) in options" :key="option">
+                                            <div>
+                                                <div class="cursor-pointer w-full border-gray-100 rounded-t border-b hover:bg-teal-100"
+                                                    @click="select(index,$event)">
+                                                    <div x-bind:class="option.selected ? 'border-teal-600' : ''"
+                                                        class="flex w-full items-center p-2 pl-2 border-transparent border-l-2 relative">
+                                                        <div class="w-full items-center flex">
+                                                            <div class="mx-2 leading-6" x-model="option" x-text="option.text"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    </div>        
+                </div>
+
+                <!-- sort inputs -->
+                <style>
+                    .dropdown:hover > .dropdown-content {
+                        display: block;
+                    }
+                </style> 
+                <div class="dropdown inline-block relative p-2">
+                    <button class="bg-gray-100 text-gray-700 border border-black font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span>Location</span>
+                    </button>
+                    <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Australia</a>
+                        </li>
+    
+                        <li class="dropdown">
+                            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Europe</a>
+                            <ul class="dropdown-content absolute hidden text-gray-700 pl-5 ml-24 -mt-10">
+                                <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Germany</a>
+                                <li><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Sweden</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown inline-block relative p-2">
+                    <button class="bg-gray-100 text-gray-700 border border-black font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span>Market</span>
+                    </button>
+                    <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Aerospace</a></li>
+                        <li>
+                        <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Agriculture</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Architectural</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Automotive</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown inline-block relative p-2">
+                    <button class="bg-gray-100 text-gray-700 border border-black font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span>Referenced Customers</span>
+                    </button>
+                    <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Ford</a>
+                        </li>
+                        <li>
+                            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">GKN</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown inline-block relative p-2">
+                    <button class="bg-gray-100 text-gray-700 border border-black font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span>Standards</span>
+                    </button>
+                    <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ADS SC21 Signatory</a></li>
+                        <li>
+                        <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">AS9100</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">BS 25999-1:2006 - Business Continuity</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">GTMA World Class</a>
+                        </li>
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">IMDS</a></li>
+                        <li>
+                        <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Investors in Excellence</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Investors in People</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO 13485:2001</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO 14001 - Environmental Management</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO 15489-1:2001 - Records Management</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO 9001:2000 - QMS Requirements</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO 9001:2008 QMS Requirements</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO/IEC 17799:2005 - Information Security Code of Practice</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO/IEC 17799:2005 - Information Security Code of Practice</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ISO/IEC/EN 17025</a>
+                        </li>
+                        
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">ITIL Certified</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Microsoft Certified Partner</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Novell Business Partner</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Oracle Certified Partner</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">PAS 124</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Q1 (Ford Quality Standard)</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">QS 9000:1994</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">SHIFT</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Sun Authorised Java Center</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">STechnology Means Business</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">TS 16949 Updated</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">UL508A</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">UKITA Quality Mark</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">4UL9</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown inline-block relative p-2">
+                    <button class="bg-gray-100 text-gray-700 border border-black font-semibold py-2 px-4 rounded inline-flex items-center">
+                        <span>Number of employees</span>
+                    </button>
+                    <ul class="dropdown-content absolute hidden text-gray-700 pt-1">
+                        <li>
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">>50</a></li>
+                        <li>
+                        <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">>200</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">>250</a>
+                        </li>
+                        <li>
+                            <a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">>350</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                            
+                    {% for list in suppliers %}
+                    <!--Card 1-->
+                    <div class="rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4 ">
+                            <!-- <img class="w-8" src="project_app\static\assets\media\suppliers\default.jpg" alt="Mountain"> -->
+                            <div  onclick="openModal('{{list.id}}')" class=" font-semibold mb-2 break-words">{{list.companyName}}</div>
+                            <div class=" font-semibold mb-2 truncate"> <a href='{{list.url}}' class="font-semibold mb-2 text-blue-700 "><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                              </svg>{{list.url}}</a>
+                            </div>
+                            
+                            <div onclick="openModal('{{list.id}}')" class="float-right  pb-2 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 align-middle " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            
+                        </div>
+                        <!-- modal -->
+
+                        <dialog id="{{list.id}}" class="bg-transparent z-0 relative w-screen h-screen">
+                            <div
+                                class="p-7 flex justify-center items-center fixed left-0 top-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 transition-opacity duration-300 opacity-0">
+                                <div class="bg-white flex rounded-lg w-1/2 relative">
+                                    <div class="flex flex-col items-start">
+                                        <div class="p-7 flex items-center w-full">
+                                            <div class="text-gray-900 font-bold text-lg">{{list.companyName}}</div>
+                                            
+                                            <svg onclick="modalClose('{{list.id}}')"
+                                                class="ml-auto fill-current text-gray-700 w-5 h-5 cursor-pointer"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                                                <path
+                                                    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
+                                            </svg>
+                                        </div>
+
+                                        <div class="px-7 text-sm overflow-x-hidden overflow-y-auto text-justify space-x-3"
+                                            style="max-height: 40vh;">
+
+                                            <p class="text-xl font-semibold ">Details OF Company :</p>
+                                            {% if list.companyName %}
+                                                <p><b>Company Name : </b>{{list.companyName}}</p>
+                                            {% endif %}
+                                            {% if list.address %}
+                                                <p><b> Address : </b>{{list.address}}</p>
+                                            {% endif %}
+                                            {% if list.postcode %}
+                                                <p><b>PostCode : </b> {{list.postcode}}</p>
+                                            {% endif %}
+                                            {% if list.country %}
+                                                <p><b>Country : </b>{{list.country}}</p>
+                                            {% endif %}
+                                            {% if list.phonenumber %}
+                                            <p><b>Phone Number : </b>{{list.phonenumber}}</p>
+                                            {% endif %}
+                                            {% if list.faxnumber %}
+                                            <p><b>Fax Number : </b>{{list.faxnumber}}</p>
+                                            {% endif %}
+                                            {% if list.url %}
+                                            <p><b>Url : </b>{{list.url}}</p>
+                                            {% endif %}
+                                            {% if list.contactname %}
+                                            <p><b>Contact Name : </b>{{list.contactname}}</p>
+                                            {% endif %}
+                                            {% if list.emailaddress %}
+                                            <p><b>Email address : </b>{{list.emailaddress}}</p>
+                                            {% endif %}
+                                            {% if list.markets %}
+                                            <p><b>Markets : </b>{{list.markets}}</p>
+                                            {% endif %}
+                                            {% if list.locations %}
+                                            <p><b>Locations : </b>{{list.locations}}</p>
+                                            {% endif %}
+                                            {% if list.standards %}
+                                            <p><b>Standards : </b>{{list.standards}}</p>
+                                            {% endif %}
+                                            {% if list.noOfEmployees %}
+                                            <p><b>Number of employee : </b>{{list.noOfEmployees}}</p>
+                                            {% endif %}
+                                            {% if list.annualTurnover %}
+                                            <p><b>Annual Turnover : </b>{{list.annualTurnover}}</p>
+                                            {% endif %}
+                                            {% if list.rateOfGrowth %}
+                                            <p><b>Rate of growth : </b>{{list.rateOfGrowth}}</p>
+                                            {% endif %}
+                                            {% if list.WMCCMrated %}
+                                            <p><b>WMCC Rated : </b>{{list.WMCCMrated}}</p>
+                                            {% endif %}
+                                            {% if list.lastUpdated %}
+                                            <p><b>Last updated : </b>{{list.lastUpdated}}</p>
+                                            {% endif %}
+                                            {% if list.cpId %}
+                                            <p><b>CP Id : </b>{{list.cpId}}</p>
+                                            {% endif %}
+                                            {% if list.csvId %}
+                                            <p><b>CSV Id : </b>{{list.csvId}}</p>
+                                            {% endif %}
+                                            {% if list.feedback %}
+                                            <p><b>Feedback : </b>{{list.feedback}}</p>
+                                            {% endif %}
+                                            {% if list.Catelog %}
+                                            <p><b>Catelog : </b>{{list.Catelog}}</p>
+                                            {% endif %}
+                                            {% if list.category %}
+                                            <p><b>Category : </b>{{list.category}}</p>
+                                            {% endif %}
+                                            {% if list.ethos %}
+                                            <p><b>Ethos : </b>{{list.ethos}}</p>
+                                            {% endif %}
+                                            {% if list.basicLineOfBusiness %}
+                                            <p><b>Basic Line Of Buisness : </b>{{list.basicLineOfBusiness}}</p>
+                                            {% endif %}
+                                            {% if list.productsAndServices %}
+                                            <p><b>Product and services : </b>{{list.productsAndServices}}</p>
+                                            {% endif %}
+                                            {% if list.profile %}
+                                            <p><b>Profile : </b>{{list.profile|safe}}</p>
+                                            {% endif %}
+                                            {% if list.companyId %}
+                                            <p><b>Company Id : </b>{{list.companyId}}</p>
+                                            {% endif %}
+                                        </div>
+
+                                        <div class="p-7 flex justify-end items-center w-full">
+                                            <button type="button" onclick="modalClose('{{list.id}}')"
+                                                class="bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+
+                        <script>
+
+                            function openModal(key) {
+                                document.getElementById(key).showModal();
+                                document.body.setAttribute('style', 'overflow: hidden;');
+                                document.getElementById(key).children[0].scrollTop = 0;
+                                document.getElementById(key).children[0].classList.remove('opacity-0');
+                                document.getElementById(key).children[0].classList.add('opacity-100')
+                            }
+
+                            function modalClose(key) {
+                                document.getElementById(key).children[0].classList.remove('opacity-100');
+                                document.getElementById(key).children[0].classList.add('opacity-0');
+                                setTimeout(function () {
+                                    document.getElementById(key).close();
+                                    document.body.removeAttribute('style');
+                                }, 100);
+                            }
+                        </script>
+
+                    </div>
+                    {% endfor %}
+                    <!-- modal end -->
+                    <!-- card 1 end -->
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+{% endblock body %}

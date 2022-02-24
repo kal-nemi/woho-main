@@ -51,6 +51,7 @@ urlpatterns = [
     path('home', project_app.views.home, name='home'),
     # path('', project_app.views.woho_home, name='woho_home'),
     path('', project_app.views.woho_home, name='woho_home'),
+    path('addspace', project_app.views.woho_addspace, name='woho_addspace'),
     path('partner_search', project_app.views.partner_search, name='partner_search'),
     path('directory', project_app.views.directory, name='directory'),
     path('projects', project_app.views.projects, name='projects'),

@@ -1,30 +1,15 @@
-# from django import forms
-# from django.contrib.auth import get_user_model
-# # from django.contrib.auth.models import User
-# from django.contrib.auth.forms import UserCreationForm
-#
-#
-# class UserRegisterForm(UserCreationForm):
-#     email = forms.EmailField()
-#     first_name = forms.CharField()
-#     last_name = forms.CharField()
-#
-#     class Meta:
-#         model = get_user_model
-#         fields = ['email', 'first_name', 'last_name', 'password1', 'password2']
-#
-#
-# class UserUpdateForm(forms.ModelForm):
-#     email = forms.EmailField()
-#     first_name = forms.CharField()
-#     last_name = forms.CharField()
-#
-#     class Meta:
-#         model = get_user_model
-#         fields = ['email', 'first_name', 'last_name']
+from django import forms
+from .models import Space
 
 
-# class ProfileUpdateForm(forms.ModelForm):
-#     class Meta:
-#         model = Profile
-#         fields = []
+class AddSpace(forms.ModelForm):
+
+    img=forms.ImageField()    #save image as blob
+    email = forms.EmailField(widget = forms.HiddenInput())
+    capacity = forms.CharField(max_length=1000)
+    # telephone = forms.CharField(max_length=15, required=True,widget=forms.TextInput(attrs={'placeholder': '*Telephone..'}))
+    address = forms.CharField(max_length=100, required=True)
+    comments=forms.CharField(max_length=1000)
+    class Meta:
+        model = Space
+        fields = ('img','email','capacity','address','comments')

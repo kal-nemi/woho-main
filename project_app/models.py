@@ -1,12 +1,8 @@
 from django.db import models
-# from django.contrib.auth import AUTH_USER_MODEL
-from PIL import Image
-# Create your models here.
 
-
-# class Profile(models.Model):
-#     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
-#     image = models.ImageField(default='images/avatar-1.png', upload_to='profile_pics')
-#
-#     def __str__(self):
-#         return f'{self.user.username} Profile'
+class Space(models.Model):
+    img=models.ImageField(upload_to='images/')    #save image as blob
+    email = models.EmailField('email address')
+    capacity = models.CharField(max_length=1000)
+    address = models.CharField(verbose_name="Address",max_length=100, null=True, blank=True)
+    comments= models.CharField(max_length=1000)

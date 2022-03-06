@@ -5,7 +5,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from numpy import integer
 from traitlets.traitlets import default
-
 from project_app.experts import get_experts
 from project_app.startup_data import companies_data
 # from .forms import UserRegisterForm
@@ -27,6 +26,8 @@ from .pagination import pagination
 import plotly.graph_objects as go
 import pandas as pd
 import re
+from .forms import AddSpace
+from .models import Space
 from json import dumps
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -542,5 +543,21 @@ def woho_home(request):
     return render(request, 'pages/woho_home.html')
 
 def woho_addspace(request):
-    return render(request, 'pages/woho_addspace.html')
+    form=AddSpace()
+    if request and request.method=='POST':
+        if len(request.FILES)!=0:
+            file=request.FILES.get("img")
+        capacity=request.POST.get("capacity")
+        address=request.POST.get("address")
+        comments=request.POST.get("comments")
+        s=Space(img=file,email=request.user.email,capacity=capacity,address=address,comments=comments)
+        s.save()
+        # form=AddSpace(request.POST,request.FILES)
+        # if form.is_valid():
+        #     form.save()
+        
+    context={
+        'form':form,
+    }    
+    return render(request, 'pages/woho_addspace.html',context)
     

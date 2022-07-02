@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woho</title>
-    <!-- <img src="wohologo.png" alt=""> -->
-    <link rel="shortcut icon" class=" bg-white " href="wohologo.png"/>
+    {% comment %} <img src="woho/project_app/static/assets/wohologo.png" alt=""> {% endcomment %}
+    {% comment %} {% static 'wohologo.png' %} {% endcomment %}
+    <link rel="shortcut icon" class=" bg-white " href="{% static '/assets/wohologo.png' %}"/>
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    
     <div class=" h-screen ">
         <!-- header -->
         <header class="text-gray-600 body-font">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                
-                <img class="w-30 h-10  " src="wohologo.png" alt="woho logo">
+                <a href="/">
+
+                    <img class="w-30 h-10  " src="{% static '/assets/wohologo.png' %}" alt="woho logo">
+                </a>
                 <!-- <span class="ml-3 text-xl">Woho</span> -->
             </a>
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -29,7 +34,22 @@
             
             
             <a href="/addspace" class="mr-5 bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 hover:text-gray-900">Add Space</a>
+            {% if request.user.is_authenticated %}
             
+            <p class="inline-flex items-center border py-1 mx-1 px-3 rounded text-base mt-4 md:mt-0"> {{user.get_full_name}}</p>
+            <a href="/logout">
+                        
+                <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Log out
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </a>
+
+            {% comment %} <img class="w-10 h-10 rounded-full" src="project_app\static\assets\media\users\default.jpg" alt="Your Image" /> {% endcomment %}
+
+            
+            {% else %}
             <a href="/login">
                         
                     <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login
@@ -38,6 +58,7 @@
                         </svg>
                     </button>
             </a>
+            {% endif %}
             
             
 
@@ -52,7 +73,7 @@
         <footer class="text-gray-600 body-font">
             <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <img class="w-30 h-10 mt-2 " src="wohologo.png" alt="woho logo">
+                <img class="w-30 h-10 mt-2 " src="{% static '/assets/wohologo.png' %}" alt="woho logo">
 
             </a>
             <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 WOHO
